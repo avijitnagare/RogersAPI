@@ -28,7 +28,6 @@ public class RogerController {
 	
 	@PostMapping() 
 	public FidoItem addFidoItem(@RequestBody FidoItem item) {
-		item.setId(null);
 		return fidoService.save(item);
 	}
 	
@@ -45,7 +44,8 @@ public class RogerController {
 	    existingFido.setImageUrl(updatedItem.getImageUrl());
 	    existingFido.setItemDescription(updatedItem.getItemDescription());
 	    existingFido.setSyncStatus(updatedItem.isSyncStatus());
-	    existingFido.setId(updatedItem.getId());
+	    existingFido.setLocalId(updatedItem.getLocalId());
+	    //existingFido.setServerId(updatedItem.getServerId());
 	    
 	    // 3. Save it back (JPA performs an UPDATE because the ID is set)
 	    return fidoService.save(existingFido);

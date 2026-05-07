@@ -11,24 +11,35 @@ import jakarta.persistence.Id;
 @Entity
 public class FidoItem {
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	public Long id;
+	public String localId;
 	
-	public Long getId() {
-		return id;
+	public String getLocalId() {
+		return localId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setLocalId(String id) {
+		this.localId = id;
 	}
 
 	public FidoItem() {
 		
 	}
 	
-	public FidoItem(String name, Boolean favorite, String itemDescription, String imageUrl, Boolean syncStatus) {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	public Long serverId;
+	
+	public Long getServerId() {
+		return serverId;
+	}
+
+	public void setServerId(Long serverId) {
+		this.serverId = serverId;
+	}
+
+	public FidoItem(String localId,String name, Boolean favorite, String itemDescription, String imageUrl, Boolean syncStatus) {
 		super();
+		this.localId = localId;
 		this.name = name;
 		this.favorite = favorite;
 		this.itemDescription = itemDescription;

@@ -23,7 +23,7 @@ public class DataDump implements CommandLineRunner {
         List<FidoItem> products = new ArrayList<>();
         
         for (int i = 1; i <= 2; i++) {
-          // products.add(new FidoItem("Fido "+i, false, "Description for Fido item: "+i, "https://picsum.photos/id/" + i + "/200/300",false));
+           products.add(new FidoItem("loc_"+i,"Fido "+i, false, "Description for Fido item: "+i, "https://picsum.photos/id/" + i + "/200/300",false));
         }
         
         repository.saveAll(products);
