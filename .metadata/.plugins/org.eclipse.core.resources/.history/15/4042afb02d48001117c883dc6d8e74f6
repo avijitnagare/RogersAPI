@@ -1,0 +1,17 @@
+package com.infy.roger.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+public class RogerController {
+	@GetMapping()
+	public String getFidoItems() {
+		return "Hello from get mapping";
+	}
+	
+	@PostMapping() 
+	public String addFidoItem() {
+		return "Item added";
+	}
+	
+}

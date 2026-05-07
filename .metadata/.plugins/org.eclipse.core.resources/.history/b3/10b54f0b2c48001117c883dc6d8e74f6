@@ -1,0 +1,5 @@
+package com.infy.roger.repository;
+
+public interface FidoItemRepository implements JPARepository {
+
+}

@@ -1,0 +1,32 @@
+package com.infy.roger.utility;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import com.infy.roger.entity.FidoItem;
+import com.infy.roger.repository.FidoItemRepository;
+
+@Component
+public class DataDump implements CommandLineRunner {
+
+    private final FidoItemRepository repository;
+
+    public DataDump(FidoItemRepository repository) {
+        this.repository = repository;
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+        List<FidoItem> products = new ArrayList<>();
+        
+        for (int i = 1; i <= 200; i++) {
+           products.add(new FidoItem("Fido "+i, false, "Description for Fido item: "+i, "https://picsum.photos/id/" + i + "/200/300",true));
+        }
+        
+        repository.saveAll(products);
+        System.out.println("Successfully pre-loaded 200 products into H2!");
+    }
+}

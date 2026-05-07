@@ -1,0 +1,87 @@
+package com.infy.roger.entity;
+
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class FidoItem {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	public Long id;
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public FidoItem() {
+		
+	}
+	
+	public FidoItem(String name, boolean favorite, String itemDescription, String imageUrl, boolean syncStatus) {
+		super();
+		this.name = name;
+		this.favorite = favorite;
+		this.itemDescription = itemDescription;
+		this.imageUrl = imageUrl;
+		this.syncStatus = syncStatus;
+	}
+
+	public String name;
+	
+	public boolean isSyncStatus() {
+		return syncStatus;
+	}
+
+	public void setSyncStatus(boolean syncStatus) {
+		this.syncStatus = syncStatus;
+	}
+
+	public boolean syncStatus;
+	
+	public boolean favorite;
+	   
+    public String itemDescription;
+    
+    public String imageUrl;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public boolean isFavorite() {
+		return favorite;
+	}
+
+	public void setFavorite(boolean isFavorite) {
+		this.favorite = isFavorite;
+	}
+
+	public String getItemDescription() {
+		return itemDescription;
+	}
+
+	public void setItemDescription(String itemDescription) {
+		this.itemDescription = itemDescription;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
+}

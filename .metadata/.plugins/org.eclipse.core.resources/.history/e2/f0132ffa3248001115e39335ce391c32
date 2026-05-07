@@ -1,0 +1,9 @@
+package com.infy.roger.entity;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class FidoItem {
+	
+
+}

@@ -1,0 +1,26 @@
+package com.infy.roger.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.infy.roger.service.FidoItemServiceImpl;
+
+@RestController("/getFidoItems")
+public class RogerController {
+	
+	@Autowired
+	private FidoItemServiceImpl fidoService;
+	
+	@GetMapping()
+	public String getFidoItems() {
+		return fidoService.
+	}
+	
+	@PostMapping() 
+	public String addFidoItem() {
+		return "Item added";
+	}
+	
+}

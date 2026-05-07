@@ -1,0 +1,5 @@
+package com.infy.roger.service;
+
+public class FidoItemServiceImpl {
+
+}
